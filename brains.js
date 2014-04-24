@@ -38,6 +38,8 @@ var camera = [0,0];
 
 var canvas = document.getElementById("gameview");
 canvas.setAttribute("tabindex", 0);
+setCanvasSize();
+
 var context = canvas.getContext("2d");
 context.fillStyle = "#FF0000";
 
@@ -488,4 +490,14 @@ function chance (p) {
 
 function rgbaString (rgb, a) {
 	return "rgba(" + rgb[0] + "," + rgb[1] + "," + rgb[2] + "," + a + ")";
+}
+
+function setCanvasSize() {
+	var outer = document.getElementById('gameouter');
+	canvasWidth = outer.clientWidth;
+	canvasHeight = outer.clientHeight;
+	canvas.width = canvasWidth;
+	canvas.height = canvasHeight;
+
+	console.log('canvas size: ' + canvasWidth + 'x' + canvasHeight);
 }
