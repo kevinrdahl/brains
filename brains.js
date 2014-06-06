@@ -42,6 +42,7 @@ setCanvasSize();
 
 var context = canvas.getContext("2d");
 context.fillStyle = "#FF0000";
+context.font = "16px Arial";
 
 var keys = new Object();
 keys['CRTL'] = 17;
@@ -268,6 +269,9 @@ function onTick() {
 	for (var i = 0; i < food.length; i++) {
 		drawFood(food[i]);
 	}
+	context.fillStyle = "#000000";
+	context.fillText("Generation " + generation,10,20);
+	context.fillText(bots.length + " remaining",10,40);
 	
 	//EVOLVE
 	genStep++;
